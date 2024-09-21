@@ -10,5 +10,19 @@ class Solution {
                 closest = x;
             }
         }
+        if (closest < 0 && contains(nums, Math.abs(closest))) {
+            return Math.abs(closest);
+        } else {
+            return closest;
+        }   
+    }
+    
+    private boolean contains(int[] nums, int value) {
+        for (int num : nums) {
+            if (num == value) {
+                return true;
+            }
+        }
+        return false;
     }
 }
